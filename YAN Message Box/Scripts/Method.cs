@@ -7,35 +7,35 @@ namespace YAN_Message_Box.Scripts
     {
         #region Form Move
         //fields
-        private static bool _moveForm;
+        private static bool _moveFrm;
         private static Point _lastLocation;
 
         /// <summary>
         /// Focus the control used move form.
         /// </summary>
-        internal static void MoveForm_MouseDown(object sender, MouseEventArgs e)
+        internal static void MoveFrm_MouseDown(object sender, MouseEventArgs e)
         {
-            _moveForm = true;
+            _moveFrm = true;
             _lastLocation = e.Location;
         }
 
         /// <summary>
         /// Moving the control.
         /// </summary>
-        internal static void MoveForm_MouseMove(object sender, MouseEventArgs e)
+        internal static void MoveFrm_MouseMove(object sender, MouseEventArgs e)
         {
-            if (_moveForm)
+            if (_moveFrm)
             {
-                var form = ((Control)sender).FindForm();
-                form.Location = new Point(form.Location.X - _lastLocation.X + e.X, form.Location.Y - _lastLocation.Y + e.Y);
-                form.Update();
+                var frm = ((Control)sender).FindForm();
+                frm.Location = new Point(frm.Location.X - _lastLocation.X + e.X, frm.Location.Y - _lastLocation.Y + e.Y);
+                frm.Update();
             }
         }
 
         /// <summary>
         /// Finish move.
         /// </summary>
-        internal static void MoveForm_MouseUp(object sender, MouseEventArgs e) => _moveForm = false;
+        internal static void MoveFrm_MouseUp(object sender, MouseEventArgs e) => _moveFrm = false;
         #endregion
 
         #region Common

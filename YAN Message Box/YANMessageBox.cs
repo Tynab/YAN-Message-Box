@@ -10,204 +10,204 @@ namespace YAN_Message_Box
 
     public abstract class YANMessageBox
     {
-        public static DialogResult Show(string txt)
+        public static DialogResult Show(string text)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt))
+            using (var msgFrm = new FormMessageBox(text))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string txt, ELang lang)
+        public static DialogResult Show(string text, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, lang))
+            using (var msgFrm = new FormMessageBox(text, lang))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string txt, string cap)
+        public static DialogResult Show(string text, string cap)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap))
+            using (var msgFrm = new FormMessageBox(text, cap))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string txt, string cap, ELang lang)
+        public static DialogResult Show(string text, string cap, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, lang))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string txt, string cap, MessageBoxButtons btns)
+        public static DialogResult Show(string text, string cap, MessageBoxButtons btns)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns))
+            using (var msgFrm = new FormMessageBox(text, cap, btns))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string txt, string cap, MessageBoxButtons btns, ELang lang)
+        public static DialogResult Show(string text, string cap, MessageBoxButtons btns, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, lang))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic)
+        public static DialogResult Show(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, ic))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic, ELang lang)
+        public static DialogResult Show(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, ic, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, lang))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton defaultBtn)
+        public static DialogResult Show(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, ic, defaultBtn))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btnDefault))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton defaultBtn, ELang lang)
+        public static DialogResult Show(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, ic, defaultBtn, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btnDefault, lang))
             {
-                res = msgForm.ShowDialog();
+                res = msgFrm.ShowDialog();
             }
             return res;
         }
 
         /*IWin32Window Owner*/
 
-        public static DialogResult Show(IWin32Window owner, string txt)
+        public static DialogResult Show(IWin32Window owner, string text)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt))
+            using (var msgFrm = new FormMessageBox(text))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string txt, ELang lang)
+        public static DialogResult Show(IWin32Window owner, string text, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, lang))
+            using (var msgFrm = new FormMessageBox(text, lang))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string txt, string cap)
+        public static DialogResult Show(IWin32Window owner, string text, string cap)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap))
+            using (var msgFrm = new FormMessageBox(text, cap))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string txt, string cap, ELang lang)
+        public static DialogResult Show(IWin32Window owner, string text, string cap, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, lang))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string txt, string cap, MessageBoxButtons btns)
+        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns))
+            using (var msgFrm = new FormMessageBox(text, cap, btns))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string txt, string cap, MessageBoxButtons btns, ELang lang)
+        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, lang))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic)
+        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, ic))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic, ELang lang)
+        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, ic, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, lang))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton defaultBtn)
+        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, ic, defaultBtn))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btnDefault))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton defaultBtn, ELang lang)
+        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault, ELang lang)
         {
             DialogResult res;
-            using (var msgForm = new FormMessageBox(txt, cap, btns, ic, defaultBtn, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btnDefault, lang))
             {
-                res = msgForm.ShowDialog(owner);
+                res = msgFrm.ShowDialog(owner);
             }
             return res;
         }

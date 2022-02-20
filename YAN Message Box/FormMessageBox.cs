@@ -21,24 +21,24 @@ namespace YAN_Message_Box
         #endregion
 
         #region Constructors
-        public FormMessageBox(string txt)
+        public FormMessageBox(string text)
         {
             InitializeComponent();
             InitializeItems();
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = null;
             SetSize(MessageBoxButtons.OK);
-            SetButtons(MessageBoxButtons.OK, Button1); //set default buttons
+            SetBtns(MessageBoxButtons.OK, Button1); //set default buttons
         }
 
-        public FormMessageBox(string txt, ELang lang)
+        public FormMessageBox(string text, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
-            SetFontLang(lang);
+            SetFntLang(lang);
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = null;
             SetSize(MessageBoxButtons.OK);
             //set default buttons
@@ -46,35 +46,35 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    SetButtonsJP(MessageBoxButtons.OK, Button1);
+                    SetBtnsJP(MessageBoxButtons.OK, Button1);
                     break;
                 }
                 case VIE:
                 {
-                    SetButtonsVN(MessageBoxButtons.OK, Button1);
+                    SetBtnsVN(MessageBoxButtons.OK, Button1);
                     break;
                 }
             }
         }
 
-        public FormMessageBox(string txt, string cap)
+        public FormMessageBox(string text, string cap)
         {
             InitializeComponent();
             InitializeItems();
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(MessageBoxButtons.OK);
-            SetButtons(MessageBoxButtons.OK, Button1); //set default buttons
+            SetBtns(MessageBoxButtons.OK, Button1); //set default buttons
         }
 
-        public FormMessageBox(string txt, string cap, ELang lang)
+        public FormMessageBox(string text, string cap, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
-            SetFontLang(lang);
+            SetFntLang(lang);
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(MessageBoxButtons.OK);
             //set default buttons
@@ -82,35 +82,35 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    SetButtonsJP(MessageBoxButtons.OK, Button1);
+                    SetBtnsJP(MessageBoxButtons.OK, Button1);
                     break;
                 }
                 case VIE:
                 {
-                    SetButtonsVN(MessageBoxButtons.OK, Button1);
+                    SetBtnsVN(MessageBoxButtons.OK, Button1);
                     break;
                 }
             }
         }
 
-        public FormMessageBox(string txt, string cap, MessageBoxButtons btns)
+        public FormMessageBox(string text, string cap, MessageBoxButtons btns)
         {
             InitializeComponent();
             InitializeItems();
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(btns);
-            SetButtons(btns, Button1); //set [default button 1]
+            SetBtns(btns, Button1); //set [default button 1]
         }
 
-        public FormMessageBox(string txt, string cap, MessageBoxButtons btns, ELang lang)
+        public FormMessageBox(string text, string cap, MessageBoxButtons btns, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
-            SetFontLang(lang);
+            SetFntLang(lang);
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(btns);
             //set [default button 1]
@@ -118,36 +118,36 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    SetButtonsJP(btns, Button1);
+                    SetBtnsJP(btns, Button1);
                     break;
                 }
                 case VIE:
                 {
-                    SetButtonsVN(btns, Button1);
+                    SetBtnsVN(btns, Button1);
                     break;
                 }
             }
         }
 
-        public FormMessageBox(string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic)
+        public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic)
         {
             InitializeComponent();
             InitializeItems();
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(btns);
-            SetButtons(btns, Button1);
-            SetIcon(ic);
+            SetBtns(btns, Button1);
+            SetIc(ic);
         }
 
-        public FormMessageBox(string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic, ELang lang)
+        public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
-            SetFontLang(lang);
+            SetFntLang(lang);
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(btns);
             //set [default button 1]
@@ -155,57 +155,57 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    SetButtonsJP(btns, Button1);
+                    SetBtnsJP(btns, Button1);
                     break;
                 }
                 case VIE:
                 {
-                    SetButtonsVN(btns, Button1);
+                    SetBtnsVN(btns, Button1);
                     break;
                 }
             }
-            SetIcon(ic);
+            SetIc(ic);
         }
 
-        public FormMessageBox(string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton defaultBtn)
+        public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault)
         {
             InitializeComponent();
             InitializeItems();
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(btns);
-            SetButtons(btns, defaultBtn);
-            SetIcon(ic);
+            SetBtns(btns, btnDefault);
+            SetIc(ic);
         }
 
-        public FormMessageBox(string txt, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton defaultBtn, ELang lang)
+        public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
-            SetFontLang(lang);
+            SetFntLang(lang);
             PrimaryColor = _primaryColor;
-            labelMessage.Text = txt;
+            labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(btns);
             switch (lang)
             {
                 case JAP:
                 {
-                    SetButtonsJP(btns, defaultBtn);
+                    SetBtnsJP(btns, btnDefault);
                     break;
                 }
                 case VIE:
                 {
-                    SetButtonsVN(btns, defaultBtn);
+                    SetBtnsVN(btns, btnDefault);
                     break;
                 }
             }
-            SetIcon(ic);
+            SetIc(ic);
         }
         #endregion
 
-        #region Locks
+        #region Overridden
         //hide sub windows
         protected override CreateParams CreateParams
         {
@@ -243,13 +243,13 @@ namespace YAN_Message_Box
         private void InitializeItems()
         {
             //title
-            panelTitle.MouseDown += MoveForm_MouseDown;
-            panelTitle.MouseMove += MoveForm_MouseMove;
-            panelTitle.MouseUp += MoveForm_MouseUp;
+            panelTitle.MouseDown += MoveFrm_MouseDown;
+            panelTitle.MouseMove += MoveFrm_MouseMove;
+            panelTitle.MouseUp += MoveFrm_MouseUp;
             //caption
-            labelCaption.MouseDown += MoveForm_MouseDown;
-            labelCaption.MouseMove += MoveForm_MouseMove;
-            labelCaption.MouseUp += MoveForm_MouseUp;
+            labelCaption.MouseDown += MoveFrm_MouseDown;
+            labelCaption.MouseMove += MoveFrm_MouseMove;
+            labelCaption.MouseUp += MoveFrm_MouseUp;
             //option
             buttonX.DialogResult = DialogResult.Cancel;
             button1.DialogResult = DialogResult.OK;
@@ -259,7 +259,7 @@ namespace YAN_Message_Box
         }
 
         //set language font
-        private void SetFontLang(ELang lang)
+        private void SetFntLang(ELang lang)
         {
             switch (lang)
             {
@@ -320,7 +320,7 @@ namespace YAN_Message_Box
         }
 
         //set buttons
-        private void SetButtons(MessageBoxButtons btns, MessageBoxDefaultButton defaultBtn)
+        private void SetBtns(MessageBoxButtons btns, MessageBoxDefaultButton btnDefault)
         {
             var xCenter = (panelButtons.Width - button1.Width) / 2;
             var yCenter = (panelButtons.Height - button1.Height) / 2;
@@ -334,7 +334,7 @@ namespace YAN_Message_Box
                     button1.Text = "OK";
                     button1.DialogResult = DialogResult.OK; //set dialogResult
                                                             //set default button
-                    SetDefaultButton(defaultBtn);
+                    SetDefaultBtn(btnDefault);
                     break;
                 }
                 case OKCancel:
@@ -351,13 +351,13 @@ namespace YAN_Message_Box
                     button2.DialogResult = DialogResult.Cancel; //set dialogResult
                     button2.BackColor = DimGray;
                     //set default button
-                    if (defaultBtn != Button3) //there are only 2 buttons, so the default button cannot be button3
+                    if (btnDefault != Button3) //there are only 2 buttons, so the default button cannot be button3
                     {
-                        SetDefaultButton(defaultBtn);
+                        SetDefaultBtn(btnDefault);
                     }
                     else
                     {
-                        SetDefaultButton(Button1);
+                        SetDefaultBtn(Button1);
                     }
                     break;
                 }
@@ -375,13 +375,13 @@ namespace YAN_Message_Box
                     button2.DialogResult = DialogResult.Cancel; //set dialogResult
                     button2.BackColor = DimGray;
                     //set default button
-                    if (defaultBtn != Button3) //there are only 2 buttons, so the default button cannot be button3
+                    if (btnDefault != Button3) //there are only 2 buttons, so the default button cannot be button3
                     {
-                        SetDefaultButton(defaultBtn);
+                        SetDefaultBtn(btnDefault);
                     }
                     else
                     {
-                        SetDefaultButton(Button1);
+                        SetDefaultBtn(Button1);
                     }
                     break;
                 }
@@ -399,13 +399,13 @@ namespace YAN_Message_Box
                     button2.DialogResult = No; //set dialogResult
                     button2.BackColor = IndianRed;
                     //set default button
-                    if (defaultBtn != Button3) //there are only 2 buttons, so the default button cannot be button3
+                    if (btnDefault != Button3) //there are only 2 buttons, so the default button cannot be button3
                     {
-                        SetDefaultButton(defaultBtn);
+                        SetDefaultBtn(btnDefault);
                     }
                     else
                     {
-                        SetDefaultButton(Button1);
+                        SetDefaultBtn(Button1);
                     }
                     break;
                 }
@@ -429,7 +429,7 @@ namespace YAN_Message_Box
                     button3.DialogResult = DialogResult.Cancel; //set dialogResult
                     button3.BackColor = DimGray;
                     //set default button
-                    SetDefaultButton(defaultBtn);
+                    SetDefaultBtn(btnDefault);
                 }
                 break;
                 case AbortRetryIgnore:
@@ -452,14 +452,14 @@ namespace YAN_Message_Box
                     button3.DialogResult = Ignore; //set dialogResult
                     button3.BackColor = IndianRed;
                     //set default button
-                    SetDefaultButton(defaultBtn);
+                    SetDefaultBtn(btnDefault);
                     break;
                 }
             }
         }
 
         //set buttons vie
-        private void SetButtonsVN(MessageBoxButtons btns, MessageBoxDefaultButton defaultBtn)
+        private void SetBtnsVN(MessageBoxButtons btns, MessageBoxDefaultButton btnDefault)
         {
             var xCenter = (panelButtons.Width - button1.Width) / 2;
             var yCenter = (panelButtons.Height - button1.Height) / 2;
@@ -473,7 +473,7 @@ namespace YAN_Message_Box
                     button1.Text = "Xong";
                     button1.DialogResult = DialogResult.OK; //set dialogResult
                                                             //set default button
-                    SetDefaultButton(defaultBtn);
+                    SetDefaultBtn(btnDefault);
                     break;
                 }
                 case OKCancel:
@@ -490,13 +490,13 @@ namespace YAN_Message_Box
                     button2.DialogResult = DialogResult.Cancel; //set dialogResult
                     button2.BackColor = DimGray;
                     //set default button
-                    if (defaultBtn != Button3) //there are only 2 buttons, so the default button cannot be button3
+                    if (btnDefault != Button3) //there are only 2 buttons, so the default button cannot be button3
                     {
-                        SetDefaultButton(defaultBtn);
+                        SetDefaultBtn(btnDefault);
                     }
                     else
                     {
-                        SetDefaultButton(Button1);
+                        SetDefaultBtn(Button1);
                     }
                     break;
                 }
@@ -514,13 +514,13 @@ namespace YAN_Message_Box
                     button2.DialogResult = DialogResult.Cancel; //set dialogResult
                     button2.BackColor = DimGray;
                     //set default button
-                    if (defaultBtn != Button3) //there are only 2 buttons, so the default button cannot be button3
+                    if (btnDefault != Button3) //there are only 2 buttons, so the default button cannot be button3
                     {
-                        SetDefaultButton(defaultBtn);
+                        SetDefaultBtn(btnDefault);
                     }
                     else
                     {
-                        SetDefaultButton(Button1);
+                        SetDefaultBtn(Button1);
                     }
                     break;
                 }
@@ -538,13 +538,13 @@ namespace YAN_Message_Box
                     button2.DialogResult = No; //set dialogResult
                     button2.BackColor = IndianRed;
                     //set default button
-                    if (defaultBtn != Button3) //there are only 2 buttons, so the default button cannot be button3
+                    if (btnDefault != Button3) //there are only 2 buttons, so the default button cannot be button3
                     {
-                        SetDefaultButton(defaultBtn);
+                        SetDefaultBtn(btnDefault);
                     }
                     else
                     {
-                        SetDefaultButton(Button1);
+                        SetDefaultBtn(Button1);
                     }
                     break;
                 }
@@ -568,7 +568,7 @@ namespace YAN_Message_Box
                     button3.DialogResult = DialogResult.Cancel; //set dialogResult
                     button3.BackColor = DimGray;
                     //set default button
-                    SetDefaultButton(defaultBtn);
+                    SetDefaultBtn(btnDefault);
                 }
                 break;
                 case AbortRetryIgnore:
@@ -591,14 +591,14 @@ namespace YAN_Message_Box
                     button3.DialogResult = Ignore; //set dialogResult
                     button3.BackColor = IndianRed;
                     //set default button
-                    SetDefaultButton(defaultBtn);
+                    SetDefaultBtn(btnDefault);
                     break;
                 }
             }
         }
 
         //set buttons
-        private void SetButtonsJP(MessageBoxButtons btns, MessageBoxDefaultButton defaultBtn)
+        private void SetBtnsJP(MessageBoxButtons btns, MessageBoxDefaultButton btnDefault)
         {
             var xCenter = (panelButtons.Width - button1.Width) / 2;
             var yCenter = (panelButtons.Height - button1.Height) / 2;
@@ -612,7 +612,7 @@ namespace YAN_Message_Box
                     button1.Text = "オーケー";
                     button1.DialogResult = DialogResult.OK; //set dialogResult
                                                             //set default button
-                    SetDefaultButton(defaultBtn);
+                    SetDefaultBtn(btnDefault);
                     break;
                 }
                 case OKCancel:
@@ -629,13 +629,13 @@ namespace YAN_Message_Box
                     button2.DialogResult = DialogResult.Cancel; //set dialogResult
                     button2.BackColor = DimGray;
                     //set default button
-                    if (defaultBtn != Button3) //there are only 2 buttons, so the default button cannot be button3
+                    if (btnDefault != Button3) //there are only 2 buttons, so the default button cannot be button3
                     {
-                        SetDefaultButton(defaultBtn);
+                        SetDefaultBtn(btnDefault);
                     }
                     else
                     {
-                        SetDefaultButton(Button1);
+                        SetDefaultBtn(Button1);
                     }
                     break;
                 }
@@ -653,13 +653,13 @@ namespace YAN_Message_Box
                     button2.DialogResult = DialogResult.Cancel; //set dialogResult
                     button2.BackColor = DimGray;
                     //set default button
-                    if (defaultBtn != Button3) //there are only 2 buttons, so the default button cannot be button3
+                    if (btnDefault != Button3) //there are only 2 buttons, so the default button cannot be button3
                     {
-                        SetDefaultButton(defaultBtn);
+                        SetDefaultBtn(btnDefault);
                     }
                     else
                     {
-                        SetDefaultButton(Button1);
+                        SetDefaultBtn(Button1);
                     }
                     break;
                 }
@@ -677,13 +677,13 @@ namespace YAN_Message_Box
                     button2.DialogResult = No; //set dialogResult
                     button2.BackColor = IndianRed;
                     //set default button
-                    if (defaultBtn != Button3) //there are only 2 buttons, so the default button cannot be button3
+                    if (btnDefault != Button3) //there are only 2 buttons, so the default button cannot be button3
                     {
-                        SetDefaultButton(defaultBtn);
+                        SetDefaultBtn(btnDefault);
                     }
                     else
                     {
-                        SetDefaultButton(Button1);
+                        SetDefaultBtn(Button1);
                     }
                     break;
                 }
@@ -707,7 +707,7 @@ namespace YAN_Message_Box
                     button3.DialogResult = DialogResult.Cancel; //set dialogResult
                     button3.BackColor = DimGray;
                     //set default button
-                    SetDefaultButton(defaultBtn);
+                    SetDefaultBtn(btnDefault);
                 }
                 break;
                 case AbortRetryIgnore:
@@ -730,16 +730,16 @@ namespace YAN_Message_Box
                     button3.DialogResult = Ignore; //set dialogResult
                     button3.BackColor = IndianRed;
                     //set default button
-                    SetDefaultButton(defaultBtn);
+                    SetDefaultBtn(btnDefault);
                     break;
                 }
             }
         }
 
         //set default button
-        private void SetDefaultButton(MessageBoxDefaultButton defaultBtn)
+        private void SetDefaultBtn(MessageBoxDefaultButton btnDefault)
         {
-            switch (defaultBtn)
+            switch (btnDefault)
             {
                 case Button1:
                 {
@@ -769,7 +769,7 @@ namespace YAN_Message_Box
         }
 
         //set icon
-        private void SetIcon(MessageBoxIcon ic)
+        private void SetIc(MessageBoxIcon ic)
         {
             switch (ic)
             {
