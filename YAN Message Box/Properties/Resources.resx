@@ -127,13 +127,13 @@
   <data name="pMessError" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pMessError.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IC" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IC.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pMessInfomation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pMessInfomation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pMessChat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pMessChat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IC.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -63,9 +63,9 @@ namespace YAN_Message_Box.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon IC {
+        internal static System.Drawing.Icon ic {
             get {
-                object obj = ResourceManager.GetObject("IC", resourceCulture);
+                object obj = ResourceManager.GetObject("ic", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

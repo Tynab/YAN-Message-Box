@@ -17,6 +17,12 @@ namespace YAN_Message_Box
     public partial class FormMessageBox : Form
     {
         #region Fields
+        private readonly Font _fntTitVn = new Font("Tahoma", 10);
+        private readonly Font _fntTitJp = new Font("Yu Gothic", 12);
+        private readonly Font _fntCapVn = new Font("Verdana", 10);
+        private readonly Font _fntCapJp = new Font("Meiryo", 9);
+        private readonly Font _fntTextVn = new Font("Segoe UI Light", 9.5f);
+        private readonly Font _fntTextJp = new Font("Meiryo", 8);
         private Color _primaryColor = CornflowerBlue;
         #endregion
 
@@ -46,12 +52,12 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    SetBtnsJP(MessageBoxButtons.OK, Button1);
+                    SetBtnsJp(MessageBoxButtons.OK, Button1);
                     break;
                 }
                 case VIE:
                 {
-                    SetBtnsVN(MessageBoxButtons.OK, Button1);
+                    SetBtnsVn(MessageBoxButtons.OK, Button1);
                     break;
                 }
             }
@@ -82,12 +88,12 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    SetBtnsJP(MessageBoxButtons.OK, Button1);
+                    SetBtnsJp(MessageBoxButtons.OK, Button1);
                     break;
                 }
                 case VIE:
                 {
-                    SetBtnsVN(MessageBoxButtons.OK, Button1);
+                    SetBtnsVn(MessageBoxButtons.OK, Button1);
                     break;
                 }
             }
@@ -118,12 +124,12 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    SetBtnsJP(btns, Button1);
+                    SetBtnsJp(btns, Button1);
                     break;
                 }
                 case VIE:
                 {
-                    SetBtnsVN(btns, Button1);
+                    SetBtnsVn(btns, Button1);
                     break;
                 }
             }
@@ -155,12 +161,12 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    SetBtnsJP(btns, Button1);
+                    SetBtnsJp(btns, Button1);
                     break;
                 }
                 case VIE:
                 {
-                    SetBtnsVN(btns, Button1);
+                    SetBtnsVn(btns, Button1);
                     break;
                 }
             }
@@ -192,12 +198,12 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    SetBtnsJP(btns, btnDefault);
+                    SetBtnsJp(btns, btnDefault);
                     break;
                 }
                 case VIE:
                 {
-                    SetBtnsVN(btns, btnDefault);
+                    SetBtnsVn(btns, btnDefault);
                     break;
                 }
             }
@@ -206,7 +212,7 @@ namespace YAN_Message_Box
         #endregion
 
         #region Overridden
-        //hide sub windows
+        //ẩn sub window
         protected override CreateParams CreateParams
         {
             get
@@ -217,7 +223,7 @@ namespace YAN_Message_Box
             }
         }
 
-        //disable close
+        //tắt alt+f4
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData) => keyData == (Alt | F4) || base.ProcessCmdKey(ref msg, keyData);
         #endregion
 
@@ -234,7 +240,7 @@ namespace YAN_Message_Box
         #endregion
 
         #region Events
-        //close
+        //thoát
         private void ButtonX_Click(object sender, EventArgs e) => Close();
         #endregion
 
@@ -258,27 +264,27 @@ namespace YAN_Message_Box
             button3.Visible = false;
         }
 
-        //set language font
+        //set ngôn ngữ font
         private void SetFntLang(ELang lang)
         {
             switch (lang)
             {
                 case JAP:
                 {
-                    labelCaption.Font = new Font("Yu Gothic", 12);
-                    labelMessage.Font = new Font("Meiryo", 8);
-                    button1.Font = new Font("Meiryo", 9);
-                    button2.Font = new Font("Meiryo", 9);
-                    button3.Font = new Font("Meiryo", 9);
+                    labelCaption.Font = _fntTitJp;
+                    labelMessage.Font = _fntTextJp;
+                    button1.Font = _fntCapJp;
+                    button2.Font = _fntCapJp;
+                    button3.Font = _fntCapJp;
                     break;
                 }
                 case VIE:
                 {
-                    labelCaption.Font = new Font("Tahoma", 10);
-                    labelMessage.Font = new Font("Segoe UI Light", 9.5f);
-                    button1.Font = new Font("Verdana", 10);
-                    button2.Font = new Font("Verdana", 10);
-                    button3.Font = new Font("Verdana", 10);
+                    labelCaption.Font = _fntTitVn;
+                    labelMessage.Font = _fntTextVn;
+                    button1.Font = _fntCapVn;
+                    button2.Font = _fntCapVn;
+                    button3.Font = _fntCapVn;
                     break;
                 }
             }
@@ -309,8 +315,7 @@ namespace YAN_Message_Box
                     break;
                 }
             }
-            Maxer(ref w, min);
-            Maxer(ref w, labelCaption.Width + buttonX.Width + Padding.Left + Padding.Right);
+            w = Maxer(w, min, labelCaption.Width + buttonX.Width + Padding.Left + Padding.Right);
             if (labelMessage.Height > 17 + labelMessage.Padding.Top + labelMessage.Padding.Bottom)
             {
                 labelMessage.Padding = new Padding(0, 0, 0, 15);
@@ -333,7 +338,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter, yCenter);
                     button1.Text = "OK";
                     button1.DialogResult = DialogResult.OK; //set dialogResult
-                                                            //set default button
+                    //set default button
                     SetDefaultBtn(btnDefault);
                     break;
                 }
@@ -344,7 +349,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width / 2 - 10, yCenter);
                     button1.Text = "OK";
                     button1.DialogResult = DialogResult.OK; //set dialogResult
-                                                            //cancel button
+                    //cancel button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + button2.Width / 2 + 10, yCenter);
                     button2.Text = "Cancel";
@@ -368,7 +373,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width / 2 - 10, yCenter);
                     button1.Text = "Retry";
                     button1.DialogResult = Retry; //set dialogResult
-                                                  //cancel button
+                    //cancel button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + button2.Width / 2 + 10, yCenter);
                     button2.Text = "Cancel";
@@ -392,7 +397,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width / 2 - 10, yCenter);
                     button1.Text = "Yes";
                     button1.DialogResult = Yes; //set dialogResult
-                                                //no button
+                    //no button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + button2.Width / 2 + 10, yCenter);
                     button2.Text = "No";
@@ -416,7 +421,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width - 10, yCenter);
                     button1.Text = "Yes";
                     button1.DialogResult = Yes; //set dialogResult
-                                                //no button
+                    //no button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter, yCenter);
                     button2.Text = "No";
@@ -445,7 +450,7 @@ namespace YAN_Message_Box
                     button2.Location = new Point(xCenter, yCenter);
                     button2.Text = "Retry";
                     button2.DialogResult = Retry; //set dialogResult
-                                                  //ignore Button
+                    //ignore Button
                     button3.Visible = true;
                     button3.Location = new Point(xCenter + button2.Width + 10, yCenter);
                     button3.Text = "Ignore";
@@ -458,8 +463,8 @@ namespace YAN_Message_Box
             }
         }
 
-        //set buttons vie
-        private void SetBtnsVN(MessageBoxButtons btns, MessageBoxDefaultButton btnDefault)
+        //set buttons tiếng việt
+        private void SetBtnsVn(MessageBoxButtons btns, MessageBoxDefaultButton btnDefault)
         {
             var xCenter = (panelButtons.Width - button1.Width) / 2;
             var yCenter = (panelButtons.Height - button1.Height) / 2;
@@ -472,7 +477,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter, yCenter);
                     button1.Text = "Xong";
                     button1.DialogResult = DialogResult.OK; //set dialogResult
-                                                            //set default button
+                    //set default button
                     SetDefaultBtn(btnDefault);
                     break;
                 }
@@ -483,7 +488,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width / 2 - 10, yCenter);
                     button1.Text = "Xong";
                     button1.DialogResult = DialogResult.OK; //set dialogResult
-                                                            //cancel button
+                    //cancel button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + button2.Width / 2 + 10, yCenter);
                     button2.Text = "Hủy";
@@ -507,7 +512,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width / 2 - 10, yCenter);
                     button1.Text = "Thử lại";
                     button1.DialogResult = Retry; //set dialogResult
-                                                  //cancel button
+                    //cancel button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + button2.Width / 2 + 10, yCenter);
                     button2.Text = "Hủy";
@@ -531,7 +536,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width / 2 - 10, yCenter);
                     button1.Text = "Vâng";
                     button1.DialogResult = Yes; //set dialogResult
-                                                //no button
+                    //no button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + button2.Width / 2 + 10, yCenter);
                     button2.Text = "Không";
@@ -555,7 +560,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width - 10, yCenter);
                     button1.Text = "Vâng";
                     button1.DialogResult = Yes; //set dialogResult
-                                                //no button
+                    //no button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter, yCenter);
                     button2.Text = "Không";
@@ -584,7 +589,7 @@ namespace YAN_Message_Box
                     button2.Location = new Point(xCenter, yCenter);
                     button2.Text = "Thử lại";
                     button2.DialogResult = Retry; //set dialogResult
-                                                  //ignore Button
+                    //ignore Button
                     button3.Visible = true;
                     button3.Location = new Point(xCenter + button2.Width + 10, yCenter);
                     button3.Text = "Bỏ qua";
@@ -597,8 +602,8 @@ namespace YAN_Message_Box
             }
         }
 
-        //set buttons
-        private void SetBtnsJP(MessageBoxButtons btns, MessageBoxDefaultButton btnDefault)
+        //set buttons tiếng nhật
+        private void SetBtnsJp(MessageBoxButtons btns, MessageBoxDefaultButton btnDefault)
         {
             var xCenter = (panelButtons.Width - button1.Width) / 2;
             var yCenter = (panelButtons.Height - button1.Height) / 2;
@@ -611,7 +616,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter, yCenter);
                     button1.Text = "オーケー";
                     button1.DialogResult = DialogResult.OK; //set dialogResult
-                                                            //set default button
+                    //set default button
                     SetDefaultBtn(btnDefault);
                     break;
                 }
@@ -622,7 +627,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width / 2 - 10, yCenter);
                     button1.Text = "オーケー";
                     button1.DialogResult = DialogResult.OK; //set dialogResult
-                                                            //cancel button
+                    //cancel button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + button2.Width / 2 + 10, yCenter);
                     button2.Text = "キャンセル";
@@ -646,7 +651,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width / 2 - 10, yCenter);
                     button1.Text = "リトライ";
                     button1.DialogResult = Retry; //set dialogResult
-                                                  //cancel button
+                    //cancel button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + button2.Width / 2 + 10, yCenter);
                     button2.Text = "キャンセル";
@@ -670,7 +675,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width / 2 - 10, yCenter);
                     button1.Text = "はい";
                     button1.DialogResult = Yes; //set dialogResult
-                                                //no button
+                    //no button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + button2.Width / 2 + 10, yCenter);
                     button2.Text = "いいえ";
@@ -694,7 +699,7 @@ namespace YAN_Message_Box
                     button1.Location = new Point(xCenter - button1.Width - 10, yCenter);
                     button1.Text = "はい";
                     button1.DialogResult = Yes; //set dialogResult
-                                                //no button
+                    //no button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter, yCenter);
                     button2.Text = "いいえ";
@@ -723,7 +728,7 @@ namespace YAN_Message_Box
                     button2.Location = new Point(xCenter, yCenter);
                     button2.Text = "リトライ";
                     button2.DialogResult = Retry; //set dialogResult
-                                                  //ignore Button
+                    //ignore Button
                     button3.Visible = true;
                     button3.Location = new Point(xCenter + button2.Width + 10, yCenter);
                     button3.Text = "無視";

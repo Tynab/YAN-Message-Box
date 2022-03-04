@@ -8,61 +8,71 @@ namespace YAN_Message_Box.Scripts
         #region Form Move
         //fields
         private static bool _moveFrm;
-        private static Point _lastLocation;
+        private static Point _lastLoc;
 
         /// <summary>
-        /// Focus the control used move form.
+        /// Focus control dùng để di chuyển form.
         /// </summary>
-        internal static void MoveFrm_MouseDown(object sender, MouseEventArgs e)
+        public static void MoveFrm_MouseDown(object sender, MouseEventArgs e)
         {
             _moveFrm = true;
-            _lastLocation = e.Location;
+            _lastLoc = e.Location;
         }
 
         /// <summary>
-        /// Moving the control.
+        /// Di chuyển control.
         /// </summary>
-        internal static void MoveFrm_MouseMove(object sender, MouseEventArgs e)
+        public static void MoveFrm_MouseMove(object sender, MouseEventArgs e)
         {
             if (_moveFrm)
             {
                 var frm = ((Control)sender).FindForm();
-                frm.Location = new Point(frm.Location.X - _lastLocation.X + e.X, frm.Location.Y - _lastLocation.Y + e.Y);
+                frm.Location = new Point(frm.Location.X - _lastLoc.X + e.X, frm.Location.Y - _lastLoc.Y + e.Y);
                 frm.Update();
             }
         }
 
         /// <summary>
-        /// Finish move.
+        /// Kết thúc di chyển.
         /// </summary>
-        internal static void MoveFrm_MouseUp(object sender, MouseEventArgs e) => _moveFrm = false;
+        public static void MoveFrm_MouseUp(object sender, MouseEventArgs e) => _moveFrm = false;
         #endregion
 
         #region Common
         /// <summary>
-        /// Find min value.
+        /// Tìm giá trị nhỏ nhất.
         /// </summary>
-        /// <param name="val">Current value.</param>
-        /// <param name="lim">Check value.</param>
-        internal static void Miner(ref int val, int lim)
+        /// <param name="list">Chuỗi dữ liệu so sánh.</param>
+        /// <returns>Giá trị nhỏ nhất.</returns>
+        public static T Miner<T>(params T[] list)
         {
-            if (val > lim)
+            dynamic res = list[0];
+            foreach (var item in list)
             {
-                val = lim;
+                if (item < res)
+                {
+                    res = item;
+                }
             }
+            return res;
         }
 
         /// <summary>
-        /// Find max value.
+        /// Tìm giá trị lớn nhất.
         /// </summary>
-        /// <param name="val">Current value.</param>
-        /// <param name="lim">Check value.</param>
-        internal static void Maxer(ref int val, int lim)
+        /// <param name="list">Chuỗi dữ liệu so sánh.</param>
+        /// <returns>Giá trị lớn nhất.</returns>
+        public static T Maxer<T>(params T[] list)
         {
-            if (val < lim)
+            dynamic res = list[0];
+            foreach (var item in list)
             {
-                val = lim;
+                if (item > res)
+                {
+                    res = item;
+                }
             }
+            return res;
         }
         #endregion
     }
