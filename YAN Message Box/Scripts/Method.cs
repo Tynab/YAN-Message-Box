@@ -13,7 +13,7 @@ namespace YAN_Message_Box.Scripts
         /// <summary>
         /// Focus control dùng để di chuyển form.
         /// </summary>
-        public static void MoveFrm_MouseDown(object sender, MouseEventArgs e)
+        internal static void MoveFrm_MouseDown(object sender, MouseEventArgs e)
         {
             _moveFrm = true;
             _lastLoc = e.Location;
@@ -22,7 +22,7 @@ namespace YAN_Message_Box.Scripts
         /// <summary>
         /// Di chuyển control.
         /// </summary>
-        public static void MoveFrm_MouseMove(object sender, MouseEventArgs e)
+        internal static void MoveFrm_MouseMove(object sender, MouseEventArgs e)
         {
             if (_moveFrm)
             {
@@ -35,7 +35,7 @@ namespace YAN_Message_Box.Scripts
         /// <summary>
         /// Kết thúc di chyển.
         /// </summary>
-        public static void MoveFrm_MouseUp(object sender, MouseEventArgs e) => _moveFrm = false;
+        internal static void MoveFrm_MouseUp(object sender, MouseEventArgs e) => _moveFrm = false;
         #endregion
 
         #region Common
@@ -44,7 +44,7 @@ namespace YAN_Message_Box.Scripts
         /// </summary>
         /// <param name="list">Chuỗi dữ liệu so sánh.</param>
         /// <returns>Giá trị nhỏ nhất.</returns>
-        public static T Miner<T>(params T[] list)
+        internal static T Miner<T>(params T[] list)
         {
             dynamic res = list[0];
             foreach (var item in list)
@@ -62,7 +62,7 @@ namespace YAN_Message_Box.Scripts
         /// </summary>
         /// <param name="list">Chuỗi dữ liệu so sánh.</param>
         /// <returns>Giá trị lớn nhất.</returns>
-        public static T Maxer<T>(params T[] list)
+        internal static T Maxer<T>(params T[] list)
         {
             dynamic res = list[0];
             foreach (var item in list)
