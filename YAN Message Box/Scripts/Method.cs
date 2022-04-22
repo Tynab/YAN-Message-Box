@@ -7,7 +7,7 @@ namespace YAN_Message_Box.Scripts
     {
         #region Form Move
         //fields
-        private static bool _moveFrm;
+        private static bool _is_Move;
         private static Point _lastLoc;
 
         /// <summary>
@@ -15,7 +15,7 @@ namespace YAN_Message_Box.Scripts
         /// </summary>
         internal static void MoveFrm_MouseDown(object sender, MouseEventArgs e)
         {
-            _moveFrm = true;
+            _is_Move = true;
             _lastLoc = e.Location;
         }
 
@@ -24,7 +24,7 @@ namespace YAN_Message_Box.Scripts
         /// </summary>
         internal static void MoveFrm_MouseMove(object sender, MouseEventArgs e)
         {
-            if (_moveFrm)
+            if (_is_Move)
             {
                 var frm = ((Control)sender).FindForm();
                 frm.Location = new Point(frm.Location.X - _lastLoc.X + e.X, frm.Location.Y - _lastLoc.Y + e.Y);
@@ -35,7 +35,7 @@ namespace YAN_Message_Box.Scripts
         /// <summary>
         /// Kết thúc di chyển.
         /// </summary>
-        internal static void MoveFrm_MouseUp(object sender, MouseEventArgs e) => _moveFrm = false;
+        internal static void MoveFrm_MouseUp(object sender, MouseEventArgs e) => _is_Move = false;
         #endregion
 
         #region Common

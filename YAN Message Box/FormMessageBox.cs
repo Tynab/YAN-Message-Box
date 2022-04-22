@@ -17,12 +17,12 @@ namespace YAN_Message_Box
     public partial class FormMessageBox : Form
     {
         #region Fields
-        private readonly Font _fntTitVn = new Font("Tahoma", 10);
-        private readonly Font _fntTitJp = new Font("Yu Gothic", 12);
-        private readonly Font _fntCapVn = new Font("Verdana", 10);
-        private readonly Font _fntCapJp = new Font("Meiryo", 9);
-        private readonly Font _fntTextVn = new Font("Segoe UI Light", 9.5f);
-        private readonly Font _fntTextJp = new Font("Meiryo", 8);
+        private readonly Font _fnt_TitVn = new Font("Tahoma", 10);
+        private readonly Font _fnt_TitJp = new Font("Yu Gothic", 12);
+        private readonly Font _fnt_CapVn = new Font("Verdana", 10);
+        private readonly Font _fnt_CapJp = new Font("Meiryo", 9);
+        private readonly Font _fnt_TextVn = new Font("Segoe UI Light", 9.5f);
+        private readonly Font _fnt_TextJp = new Font("Meiryo", 8);
         private Color _primaryColor = CornflowerBlue;
         #endregion
 
@@ -36,6 +36,7 @@ namespace YAN_Message_Box
             labelCaption.Text = null;
             SetSize(MessageBoxButtons.OK);
             SetBtns(MessageBoxButtons.OK, Button1); //set default buttons
+            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, ELang lang)
@@ -61,6 +62,7 @@ namespace YAN_Message_Box
                     break;
                 }
             }
+            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap)
@@ -72,6 +74,7 @@ namespace YAN_Message_Box
             labelCaption.Text = cap;
             SetSize(MessageBoxButtons.OK);
             SetBtns(MessageBoxButtons.OK, Button1); //set default buttons
+            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, ELang lang)
@@ -97,6 +100,7 @@ namespace YAN_Message_Box
                     break;
                 }
             }
+            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns)
@@ -108,6 +112,7 @@ namespace YAN_Message_Box
             labelCaption.Text = cap;
             SetSize(btns);
             SetBtns(btns, Button1); //set [default button 1]
+            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, ELang lang)
@@ -133,6 +138,7 @@ namespace YAN_Message_Box
                     break;
                 }
             }
+            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic)
@@ -145,6 +151,7 @@ namespace YAN_Message_Box
             SetSize(btns);
             SetBtns(btns, Button1);
             SetIc(ic);
+            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, ELang lang)
@@ -171,6 +178,7 @@ namespace YAN_Message_Box
                 }
             }
             SetIc(ic);
+            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault)
@@ -183,6 +191,7 @@ namespace YAN_Message_Box
             SetSize(btns);
             SetBtns(btns, btnDefault);
             SetIc(ic);
+            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault, ELang lang)
@@ -208,6 +217,7 @@ namespace YAN_Message_Box
                 }
             }
             SetIc(ic);
+            buttonX.Click += ButtonX_Click;
         }
         #endregion
 
@@ -271,20 +281,20 @@ namespace YAN_Message_Box
             {
                 case JAP:
                 {
-                    labelCaption.Font = _fntTitJp;
-                    labelMessage.Font = _fntTextJp;
-                    button1.Font = _fntCapJp;
-                    button2.Font = _fntCapJp;
-                    button3.Font = _fntCapJp;
+                    labelCaption.Font = _fnt_TitJp;
+                    labelMessage.Font = _fnt_TextJp;
+                    button1.Font = _fnt_CapJp;
+                    button2.Font = _fnt_CapJp;
+                    button3.Font = _fnt_CapJp;
                     break;
                 }
                 case VIE:
                 {
-                    labelCaption.Font = _fntTitVn;
-                    labelMessage.Font = _fntTextVn;
-                    button1.Font = _fntCapVn;
-                    button2.Font = _fntCapVn;
-                    button3.Font = _fntCapVn;
+                    labelCaption.Font = _fnt_TitVn;
+                    labelMessage.Font = _fnt_TextVn;
+                    button1.Font = _fnt_CapVn;
+                    button2.Font = _fnt_CapVn;
+                    button3.Font = _fnt_CapVn;
                     break;
                 }
             }

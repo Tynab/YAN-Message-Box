@@ -90,20 +90,20 @@ namespace YAN_Message_Box
             return res;
         }
 
-        public static DialogResult Show(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault)
+        public static DialogResult Show(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btn_Default)
         {
             DialogResult res;
-            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btnDefault))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btn_Default))
             {
                 res = msgFrm.ShowDialog();
             }
             return res;
         }
 
-        public static DialogResult Show(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault, ELang lang)
+        public static DialogResult Show(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btn_Default, ELang lang)
         {
             DialogResult res;
-            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btnDefault, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btn_Default, lang))
             {
                 res = msgFrm.ShowDialog();
             }
@@ -192,20 +192,20 @@ namespace YAN_Message_Box
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault)
+        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btn_Default)
         {
             DialogResult res;
-            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btnDefault))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btn_Default))
             {
                 res = msgFrm.ShowDialog(owner);
             }
             return res;
         }
 
-        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault, ELang lang)
+        public static DialogResult Show(IWin32Window owner, string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btn_Default, ELang lang)
         {
             DialogResult res;
-            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btnDefault, lang))
+            using (var msgFrm = new FormMessageBox(text, cap, btns, ic, btn_Default, lang))
             {
                 res = msgFrm.ShowDialog(owner);
             }
