@@ -31,18 +31,23 @@ namespace YAN_Message_Box
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
             labelCaption.Text = null;
             SetSize(MessageBoxButtons.OK);
             SetBtns(MessageBoxButtons.OK, Button1); //set default buttons
-            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             SetFntLang(lang);
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
@@ -62,25 +67,29 @@ namespace YAN_Message_Box
                     break;
                 }
             }
-            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap)
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(MessageBoxButtons.OK);
             SetBtns(MessageBoxButtons.OK, Button1); //set default buttons
-            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             SetFntLang(lang);
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
@@ -100,25 +109,29 @@ namespace YAN_Message_Box
                     break;
                 }
             }
-            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns)
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(btns);
             SetBtns(btns, Button1); //set [default button 1]
-            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             SetFntLang(lang);
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
@@ -138,26 +151,30 @@ namespace YAN_Message_Box
                     break;
                 }
             }
-            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic)
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(btns);
             SetBtns(btns, Button1);
             SetIc(ic);
-            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             SetFntLang(lang);
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
@@ -178,26 +195,30 @@ namespace YAN_Message_Box
                 }
             }
             SetIc(ic);
-            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault)
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
             labelCaption.Text = cap;
             SetSize(btns);
             SetBtns(btns, btnDefault);
             SetIc(ic);
-            buttonX.Click += ButtonX_Click;
         }
 
         public FormMessageBox(string text, string cap, MessageBoxButtons btns, MessageBoxIcon ic, MessageBoxDefaultButton btnDefault, ELang lang)
         {
             InitializeComponent();
             InitializeItems();
+            //btn x
+            buttonX.Click += ButtonX_Click;
+            //op
             SetFntLang(lang);
             PrimaryColor = _primaryColor;
             labelMessage.Text = text;
@@ -217,7 +238,6 @@ namespace YAN_Message_Box
                 }
             }
             SetIc(ic);
-            buttonX.Click += ButtonX_Click;
         }
         #endregion
 
